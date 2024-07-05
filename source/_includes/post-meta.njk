@@ -1,19 +1,4 @@
-{%- macro postMeta(date, excerpt, tags, teaser, title, url) -%}
-
-  {#- The title is the title of the blog post, but depending on where it is
-      output, we may or may not want it to be the `h1` heading on the page.
-      Let's check if it is part of the teaser -- the blurb that shows up on
-      the homepage or in a list of posts. For that, the heading is an `h2`.
-      Otherwise, this macro is used on the blog post iteself, and it output
-      as an `h1`.
-  -#}
-  <{{- 'h2' if teaser else 'h1' -}}>
-
-    {#- No matter what, let's output the title of the blog post. -#}
-    {{- title -}}
-
-  {#- Output the closing tag for the heading element, tested above. -#}
-  </{{- 'h2' if teaser else 'h1' -}}>
+{%- macro postMeta(date, excerpt, tags, teaser, url) -%}
 
   {#- Display the date below the header. Even though there will very most likely
       always be a date, we can check for one just to be on the safe side.

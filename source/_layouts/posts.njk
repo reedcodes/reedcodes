@@ -7,12 +7,14 @@ layout: default
 
 <article>
 
-  {{- hero() -}}
+  {{- hero(
+      image=image,
+      title=title
+  ) -}}
 
   {{- postMeta(
       date=date,
-      tags=tags,
-      title=title
+      tags=tags
   ) -}}
 
   {{ content|safe }}

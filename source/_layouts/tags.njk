@@ -14,14 +14,17 @@ eleventyComputed:
 {%- if postList -%}
   {%- for post in postList -%}
     <article>
-      {{- hero() -}}
+      {{- hero(
+          image=post.data.image,
+          teaser=true,
+          title=post.data.title
+      ) -}}
 
       {{- postMeta(
           date=post.data.date,
           excerpt=post.data.excerpt,
           tags=post.data.tags,
           teaser=true,
-          title=post.data.title,
           url=post.url
       ) -}}
     </article>

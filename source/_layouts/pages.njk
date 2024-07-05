@@ -6,7 +6,10 @@ layout: default
 
 <article>
 
-  {{- hero() -}}
+  {{- hero(
+      image=image,
+      title=title
+  ) -}}
 
   {{ content|safe }}
 
