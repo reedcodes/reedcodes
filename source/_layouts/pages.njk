@@ -2,9 +2,11 @@
 layout: default
 ---
 
+{%- from "hero.njk" import hero with context -%}
+
 <article>
 
-  {{ hero }}<br>
+  {{- hero() -}}
 
   {{ content|safe }}
 

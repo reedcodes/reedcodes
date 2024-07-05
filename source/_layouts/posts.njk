@@ -2,13 +2,15 @@
 layout: default
 ---
 
+{%- from "hero.njk" import hero with context -%}
 {%- from "post-meta.njk" import postMeta with context -%}
 
 <article>
 
+  {{- hero() -}}
+
   {{- postMeta(
       date=date,
-      hero=hero,
       tags=tags,
       title=title
   ) -}}

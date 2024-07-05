@@ -2,6 +2,7 @@
 layout: default
 ---
 
+{%- from "hero.njk" import hero with context -%}
 {%- from "post-meta.njk" import postMeta with context -%}
 
 <h1>{{ title }}</h1>
@@ -11,6 +12,8 @@ layout: default
 {%- if postList -%}
   {%- for post in postList -%}
     <article>
+      {{- hero() -}}
+
       {{- postMeta(
           date=post.data.date,
           excerpt=post.data.excerpt,
