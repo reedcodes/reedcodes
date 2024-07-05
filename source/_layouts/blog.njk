@@ -6,7 +6,7 @@ layout: default
 
 <h1>{{ title }}</h1>
 
-{%- set postList = pagination.items -%}
+{%- set postList = pagination.items|reverse -%}
 
 {%- if postList -%}
   {%- for post in postList -%}
