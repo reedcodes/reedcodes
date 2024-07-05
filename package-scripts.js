@@ -1,5 +1,9 @@
 module.exports = {
   scripts: {
+    css: {
+      build: "sass --style=compressed --no-source-map ./source/_scss:./site/_assets/css",
+      watch: "sass --watch ./source/_scss:./site/_assets/css"
+    },
     site: {
       build: "npx @11ty/eleventy --quiet",
       watch: "npx @11ty/eleventy --serve --quiet"

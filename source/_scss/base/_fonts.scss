@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "Public Sans";
+  src:
+    local( "Public Sans" ),
+    local( "Public-Sans" ),
+    url("/_assets/webfonts/PublicSans-Regular.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Public Sans";
+  src:
+    local( "Public Sans" ),
+    local( "Public-Sans" ),
+    url("/_assets/webfonts/PublicSans-Italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+}
