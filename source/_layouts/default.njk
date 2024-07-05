@@ -13,7 +13,7 @@
     <nav>
       <a id="me" href="/">Reed Piernock</a>
 
-      {%- set menu = collections.all | eleventyNavigation -%}
+      {%- set menu = collections.all|eleventyNavigation -%}
       {%- if menu -%}
         <ul>
           {%- for item in menu -%}
@@ -31,7 +31,7 @@
   </header>
 
   <main id="main">
-    {{ content | safe }}
+    {{ content|safe }}
   </main>
 
   <footer id="footer">

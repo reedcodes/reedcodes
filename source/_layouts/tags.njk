@@ -8,7 +8,7 @@ eleventyComputed:
 
 <h1>{{ title }}</h1>
 
-{%- set postList = collections[tag] | reverse -%}
+{%- set postList = collections[tag]|reverse -%}
 
 {%- if postList -%}
   {%- for post in postList -%}

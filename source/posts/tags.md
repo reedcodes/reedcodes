@@ -1,5 +1,5 @@
 ---
-permalink: "/blog/tag/{{ tag | slug }}/"
+permalink: "/blog/tag/{{ tag|slug }}/"
 layout: tags
 eleventyNavigation:
   key: Tags

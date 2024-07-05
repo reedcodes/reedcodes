@@ -33,7 +33,7 @@
             already lists _all_ posts, we don't have to output the tag 'posts'.
         -#}
         {%- if tag != 'posts' -%}
-          <dd><a href="/blog/tag/{{ tag | slug }}/">{{ tag }}</a></dd>
+          <dd><a href="/blog/tag/{{ tag|slug }}/">{{ tag }}</a></dd>
         {%- endif -%}
       {%- endfor -%}
     </dl>
