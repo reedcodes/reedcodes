@@ -16,8 +16,9 @@ module.exports = function(eleventyConfig) {
   // in a collection.
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
-  // Add blog glob. This assists in pulling in various collections in the blog,
-  // such as posts, categories, and tags.
+  // Add collections! This assists in pulling in various collections in the
+  // blog, such as posts and tags.
+  eleventyConfig.addCollection( 'postList', require('./source/_config/collections/posts.js'));
   eleventyConfig.addCollection( 'tagList', require('./source/_config/collections/tags.js') );
 
   // Add date filters to make it a little easier to write dates.

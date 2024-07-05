@@ -5,5 +5,5 @@ module.exports = function(collection) {
     (item.data.tags || []).forEach(tag => tagList.add(tag));
   });
 
-  return ( [...tagList] );
+  return([...tagList]);
 };

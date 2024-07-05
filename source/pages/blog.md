@@ -6,6 +6,6 @@ eleventyNavigation:
   key: Blog
   order: 2
 pagination:
-  data: collections.posts
+  data: collections.postList
   size: 10
 ---
