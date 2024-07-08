@@ -1,23 +1,23 @@
 {%- macro hero(banner, teaser, title) -%}
+  <div class="hero">
+    {%- if banner -%}
+      {# <p>{{ banner.source }} - {{ banner.alt }}</p> #}
+      <img src="{{banner.source}}" alt="{{banner.alt}}" width="300" height="300">
+    {%- endif -%}
 
-  {%- if banner -%}
-    {# <p>{{ banner.source }} - {{ banner.alt }}</p> #}
-    <img src="{{banner.source}}" alt="{{banner.alt}}" width="300" height="300">
-  {%- endif -%}
+    {#- The title is the title of the blog post, but depending on where it is
+        output, we may or may not want it to be the `h1` heading on the page.
+        Let's check if it is part of the teaser -- the blurb that shows up on
+        the homepage or in a list of posts. For that, the heading is an `h2`.
+        Otherwise, this macro is used on the blog post iteself, and it output
+        as an `h1`.
+    -#}
+    <{{- 'h2' if teaser else 'h1' -}}>
 
-  {#- The title is the title of the blog post, but depending on where it is
-      output, we may or may not want it to be the `h1` heading on the page.
-      Let's check if it is part of the teaser -- the blurb that shows up on
-      the homepage or in a list of posts. For that, the heading is an `h2`.
-      Otherwise, this macro is used on the blog post iteself, and it output
-      as an `h1`.
-  -#}
-  <{{- 'h2' if teaser else 'h1' -}}>
+      {#- No matter what, let's output the title of the blog post. -#}
+      {{- title -}}
 
-    {#- No matter what, let's output the title of the blog post. -#}
-    {{- title -}}
-
-  {#- Output the closing tag for the heading element, tested above. -#}
-  </{{- 'h2' if teaser else 'h1' -}}>
-
+    {#- Output the closing tag for the heading element, tested above. -#}
+    </{{- 'h2' if teaser else 'h1' -}}>
+  </div>
 {%- endmacro -%}
