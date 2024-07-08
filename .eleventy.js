@@ -5,6 +5,7 @@
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const eleventyRssPlugin = require("@11ty/eleventy-plugin-rss");
 
+const favicons = require('eleventy-plugin-gen-favicons');
 const metagen = require('eleventy-plugin-metagen');
 
 /*
@@ -30,6 +31,12 @@ module.exports = function(eleventyConfig) {
   // Add the metagen plugin for 11ty.
   // https://github.com/tannerdolby/eleventy-plugin-metagen
   eleventyConfig.addPlugin(metagen);
+
+  // Add the favicon plugin for 11ty.
+  // https://github.com/NJAldwin/eleventy-plugin-gen-favicons
+  eleventyConfig.addPlugin(favicons, {
+    'outputDir': './site'
+  });
 
   // Add collections! This assists in pulling in various collections in the
   // blog, such as posts and tags.
