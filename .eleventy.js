@@ -5,6 +5,8 @@
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const eleventyRssPlugin = require("@11ty/eleventy-plugin-rss");
 
+const metagen = require('eleventy-plugin-metagen');
+
 /*
  * 11ty configurations.
  * This section includes setup for collections, filters, and shortcodes, then
@@ -24,6 +26,10 @@ module.exports = function(eleventyConfig) {
       quoteStyle: 0
     }
   });
+
+  // Add the metagen plugin for 11ty.
+  // https://github.com/tannerdolby/eleventy-plugin-metagen
+  eleventyConfig.addPlugin(metagen);
 
   // Add collections! This assists in pulling in various collections in the
   // blog, such as posts and tags.

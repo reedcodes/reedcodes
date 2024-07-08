@@ -2,8 +2,17 @@
 <html>
 
 <head>
-  <title>{{ title }} [ReedCodes.com]</title>
-  <link rel="stylesheet" href="/_assets/css/reedcodes.css">
+  {%- metagen
+      name = site.name,
+      desc = site.description,
+      site_name = site.website,
+      title = title + " [ReedCodes.com]",
+      url = site.url + page.url,
+      generator = "eleventy",
+      comments = false,
+      css = ["/_assets/css/reedcodes.css"]
+  -%}
+
   <link rel="alternate" type="application/rss+xml" title="RSS feed for ReedCodes website" href="feed.xml" />
 </head>
 
