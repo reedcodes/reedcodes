@@ -1,13 +1,8 @@
 {
   "name": "Reed Piernock",
-  "title": "presentation layer developer",
   "website": "ReedCodes.com",
   "url": "https://reedcodes.com",
   "email": "hello@reedcodes.com",
-  "assets":{
-    "css": "/dist/css/",
-    "images": "/dist/images/"
-  },
   "external": {
     "talks": "https://talks.reedcodes.com/",
     "lhj": "https://lincolnhighwayjournal.com/"

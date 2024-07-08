@@ -1,0 +1,37 @@
+---
+layout: default
+pageClass: blog
+---
+
+{%- from "hero.njk" import hero with context -%}
+
+<h1>{{ title }}</h1>
+
+{%- set postList = pagination.items -%}
+
+{%- if postList -%}
+  {%- for post in postList -%}
+    <article>
+      {{- hero(
+          banner=post.data.banner,
+          date=post.data.date,
+          excerpt=post.data.excerpt,
+          tags=post.data.tags,
+          teaser=true,
+          title=post.data.title,
+          url=post.url
+      ) -}}
+    </article>
+  {%- endfor -%}
+{%- endif -%}
+
+{%- if pagination.href.previous or pagination.href.next -%}
+  <nav aria-label="blog post list pagination">
+    {%- if pagination.href.previous -%}
+      <a href="{{- pagination.href.previous -}}" data-direction="backwards">Previous Page</a>
+    {%- endif -%}
+    {%- if pagination.href.next -%}
+      <a href="{{- pagination.href.next -}}" data-direction="forwards">Next Page</a>
+    {%- endif -%}
+  </nav>
+{%- endif -%}

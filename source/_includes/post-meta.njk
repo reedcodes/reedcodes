@@ -1,0 +1,46 @@
+{%- macro postMeta(date, excerpt, tags, teaser, url) -%}
+
+  {#- Dates are included on posts, but not pages. Display the date below the
+      header. Even though there will very most likely always be a date, we can
+      check for one just to be on the safe side. When used here, the `natural`
+      value for the custom date filter outputs the format "Day Month Year".
+  -#}
+  {%- if date -%}
+    <p>{{- date|dateSimple('natural') -}}</p>
+  {%- endif -%}
+
+  {#- A blog post could have one or more tags associated with it. Tags are not
+      used on pages.
+  -#}
+  {%- if tags -%}
+    <dl>
+      <dt>Tags</dt>
+      {%- for tag in tags -%}
+        {#- All posts are tagged with 'posts'. Because the main blog list page
+            already lists _all_ posts, we don't have to output the tag 'posts'.
+        -#}
+        {%- if tag != 'posts' -%}
+          <dd><a href="/blog/tag/{{ tag|slug }}/">{{ tag }}</a></dd>
+        {%- endif -%}
+      {%- endfor -%}
+    </dl>
+  {%- endif -%}
+
+  {#- The excerpt is the blurb that shows up when a post is linked from another
+      page, such as the list of blog posts. There may or may not be an excerpt!
+      If there is, output it now. Excerpts are not used on pages.
+  -#}
+  {%- if teaser and exceprt -%}
+    <p>{{- excerpt -}}</p>
+  {%- endif -%}
+
+  {#- The url is the link to the blog post, but depending on where it is output,
+      we may or may not want it to link anywhere from the page. Let's check if
+      it is part of the teaser; if it is, output the link! If not, output no
+      element. The teaser url is not used on pages.
+  -#}
+  {%- if teaser and url -%}
+    <a href="{{- url -}}">Read the full post</a>
+  {%- endif -%}
+
+{%- endmacro -%}

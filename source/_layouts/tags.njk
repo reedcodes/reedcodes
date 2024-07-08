@@ -1,0 +1,28 @@
+---
+layout: default
+pageClass: tags
+eleventyComputed:
+  title: "Tag Archive: {{ tag }}"
+---
+
+{%- from "hero.njk" import hero with context -%}
+
+<h1>{{ title }}</h1>
+
+{%- set postList = collections[tag]|reverse -%}
+
+{%- if postList -%}
+  {%- for post in postList -%}
+    <article>
+      {{- hero(
+          banner=post.data.banner,
+          date=post.data.date,
+          excerpt=post.data.excerpt,
+          tags=post.data.tags,
+          teaser=true,
+          title=post.data.title,
+          url=post.url
+      ) -}}
+    </article>
+  {%- endfor -%}
+{%- endif -%}

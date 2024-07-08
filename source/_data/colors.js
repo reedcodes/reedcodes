@@ -1,32 +1,22 @@
 module.exports = [
   {
-    // beige
-    name: "main",
-    color: "#f4f4e1"
-  },
-  {
-    // black-green
-    name: "contrast",
-    color: "#0e1e0d"
-  },
-  {
-    // straw
-    name: "highlight",
-    color: "#ccce7a"
-  },
-  {
-    // rust
+    // aquamarine
     name: "primary",
-    color: "#c43121"
+    color: "#8dffe2"
   },
   {
-    // teal
+    // hot pink
     name: "secondary",
-    color: "#95caba"
+    color: "#ff8de5"
   },
   {
-    // dark beige
-    name: "accent",
-    color: "#bea467",
+    // yellow
+    name: "tertiary",
+    color: "#fefb94"
+  },
+  {
+    // electric blue
+    name: "supplementary ",
+    color: "#1ae8ff"
   }
 ];

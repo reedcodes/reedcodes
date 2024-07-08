@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>{{ title }} [ReedCodes.com]</title>
+  <link rel="stylesheet" href="/_assets/css/reedcodes.css">
+  <link rel="alternate" type="application/rss+xml" title="RSS feed for ReedCodes website" href="feed.xml" />
+</head>
+
+<body class="site {{ pageClass -}}">
+  {%- include 'construction.njk' -%}
+
+  <div class="container">
+    <header id="header">
+      <nav>
+        <a id="me" href="/">Reed Piernock</a>
+
+        {%- set menu = collections.all|eleventyNavigation -%}
+        {%- if menu -%}
+          <ul>
+            {%- for item in menu -%}
+              {%- if item.key != 'Home' -%}
+                <li><a href="{{- item.url -}}">{{- item.key -}}</a></li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </nav>
+
+      {#
+      <search>
+      </search>
+      #}
+
+    </header>
+
+    <main id="main">
+      {{ content|safe }}
+    </main>
+
+    <footer id="footer">
+      <p>© {{ page.date.getFullYear() }} Reed Piernock.</p>
+      <p><a href="/feed.xml">Subscribe to the blog feed</a></p>
+
+      <section aria-labelledby="contact">
+        <h2 id="contect">Get in Touch</h2>
+
+        <p>Feel free to contact me! We can chat about the current state of the web and front-end development, and I would love to discuss the finer points of horror film and our relationships with it.</p>
+
+        <a href="/contact/">Send a message</a>
+      </section>
+
+      <nav aria-labelledby="css-joy">
+        <h2 id="css-joy">CSS Joy Webring</h2>
+        <ul>
+          <li><a href="https://webri.ng/webring/cssjoy/previous?via=https://reedcodes.com">Previous</a></li>
+          <li><a href="https://webri.ng/webring/cssjoy/random?via=https://reedcodes.com">Random</a></li>
+          <li><a href="https://webri.ng/webring/cssjoy/next?via=https://reedcodes.com">Next</a></li>
+        </ul>
+      </nav>
+    </footer>
+
+  </div>
+</body>
+</html>

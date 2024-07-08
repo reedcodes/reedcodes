@@ -1,5 +1,0 @@
-{
-  "layout": "layouts/default.njk",
-  "tags": "contact",
-  "permalink": "/contact/{{ page.fileSlug }}/"
-}

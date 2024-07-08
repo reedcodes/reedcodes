@@ -1,0 +1,80 @@
+/*
+ * inspired by several resets, e.g.
+ * https://piccalil.li/blog/a-modern-css-reset/
+ * https://meyerweb.com/eric/tools/css/reset/
+ */
+
+html {
+  text-size-adjust: none;
+}
+
+*, 
+*::before,
+*::after {
+  box-sizing: border-box;
+}  
+
+body {
+  min-block-size: 100vh;
+  inline-size: min(100%, 100vw);
+  margin: 0;
+  padding: 0;
+}
+
+:first-child { margin-top: 0; }
+:last-child { margin-bottom: 0; }
+
+:target {
+  scroll-margin-block: 5ex; }
+
+:focus,
+:focus-visible {
+  scroll-margin-bottom: 10vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+a {
+  text-decoration-skip-ink: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1;
+}
+
+textarea:not([rows]) {
+  min-block-size: 10em;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  block-size: auto;
+  max-inline-size: 100%;
+}
+
+svg {
+  pointer-events: none;
+  fill: currentColor;
+}

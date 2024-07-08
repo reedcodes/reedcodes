@@ -1,0 +1,21 @@
+.site {
+  font-family: "Public Sans", system-ui, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.container {
+  inline-size: min(80ch, 100%);
+  margin-inline: auto;
+}
+
+header,
+main,
+footer {
+  margin-block: 2rem;
+}
+
+main {
+  padding-block: 2rem;
+  border-block: 0.5rem solid;
+}

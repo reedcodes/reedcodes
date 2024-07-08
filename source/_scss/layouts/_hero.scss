@@ -1,0 +1,22 @@
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  &-image {
+    flex-grow: 1;
+    flex-basis: var(--hero-image-flexBasis, 15rem);
+  }
+
+  img {
+    aspect-ratio: var(--hero-image-aspectRatio, 4/3);
+    object-fit: var(--hero-image-objectFit, cover);
+    inline-size: var(--hero-image-inlineSize, 100%);
+  }
+
+  &-text {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: var(--hero-title-minInlineSize, 50%);
+  }
+}
