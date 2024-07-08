@@ -2,7 +2,7 @@
  * 11ty plugins.
  */
 
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 
 /*
  * 11ty configurations.
@@ -30,7 +30,8 @@ module.exports = function(eleventyConfig) {
 
   // Send any static assets in the source directory to the built site.
   eleventyConfig.addPassthroughCopy( {
-    "./source/_webfonts/": "_assets/webfonts/"
+    './source/_images/': '_assets/images/',
+    './source/_webfonts/': '_assets/webfonts/'
   } );
 
   // 11ty config options.
