@@ -19,7 +19,9 @@
         {%- if menu -%}
           <ul>
             {%- for item in menu -%}
-              <li><a href="{{- item.url -}}">{{- item.key -}}</a></li>
+              {%- if item.key != 'Home' -%}
+                <li><a href="{{- item.url -}}">{{- item.key -}}</a></li>
+              {%- endif -%}
             {%- endfor -%}
           </ul>
         {%- endif -%}
