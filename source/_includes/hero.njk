@@ -1,6 +1,11 @@
-{%- macro hero(image, teaser, title) -%}
+{%- macro hero(banner, teaser, title) -%}
 
-    {#- The title is the title of the blog post, but depending on where it is
+  {%- if banner -%}
+    {# <p>{{ banner.source }} - {{ banner.alt }}</p> #}
+    <img src="{{banner.source}}" alt="{{banner.alt}}" width="300" height="300">
+  {%- endif -%}
+
+  {#- The title is the title of the blog post, but depending on where it is
       output, we may or may not want it to be the `h1` heading on the page.
       Let's check if it is part of the teaser -- the blurb that shows up on
       the homepage or in a list of posts. For that, the heading is an `h2`.
