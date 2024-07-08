@@ -1,7 +1,17 @@
 .hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+
   img {
-    aspect-ratio: 21/9;
-    object-fit: cover;
-    inline-size: min(100%, 100vw);
+    aspect-ratio: var(--hero-aspectRatio, 4/3);
+    object-fit: var(--hero-objectFit, cover);
+    flex-grow: 1;
+  }
+
+  h1, h2 {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: var(--hero-title-minInlineSize, 50%);
   }
 }

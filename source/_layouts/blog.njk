@@ -1,5 +1,6 @@
 ---
 layout: default
+pageClass: blog
 ---
 
 {%- from "hero.njk" import hero with context -%}
@@ -13,7 +14,7 @@ layout: default
   {%- for post in postList -%}
     <article>
       {{- hero(
-          image=post.data.image,
+          banner=post.data.banner,
           teaser=true,
           title=post.data.title
       ) -}}
