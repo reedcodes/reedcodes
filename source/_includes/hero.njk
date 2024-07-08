@@ -1,23 +1,48 @@
-{%- macro hero(banner, teaser, title) -%}
+{%- from "post-meta.njk" import postMeta with context -%}
+
+{%- macro hero(banner, date, excerpt, tags, teaser, title, url) -%}
   <div class="hero">
+
+    {#- A page or post has the option to include an image banner, which is
+        included for both full content or teasers.
+    -#}
     {%- if banner -%}
-      {# <p>{{ banner.source }} - {{ banner.alt }}</p> #}
-      <img src="{{banner.source}}" alt="{{banner.alt}}" width="300" height="300">
+      <div class="hero-image">
+        <img src="{{- banner.source -}}" alt="{{- banner.alt -}}" width="{{- banner.width if banner.width else '300' -}}" height="{{- banner.height if banner.height else '300' -}}">
+      </div>
     {%- endif -%}
 
-    {#- The title is the title of the blog post, but depending on where it is
-        output, we may or may not want it to be the `h1` heading on the page.
-        Let's check if it is part of the teaser -- the blurb that shows up on
-        the homepage or in a list of posts. For that, the heading is an `h2`.
-        Otherwise, this macro is used on the blog post iteself, and it output
-        as an `h1`.
-    -#}
-    <{{- 'h2' if teaser else 'h1' -}}>
+    <div class="hero-text">
+      {#- The title is the title of the page or post, but depending on where it
+          is output, we may or may not want it to be the `h1` heading on the
+          page. Let's check if it is part of the teaser -- the blurb that shows
+          up on the homepage or in a list of posts. For that, the heading is an
+          `h2`. Otherwise, this macro is used on the page or post iteself, and
+          it output as an `h1`.
+      -#}
+      <{{- 'h2' if teaser else 'h1' -}}>
 
-      {#- No matter what, let's output the title of the blog post. -#}
-      {{- title -}}
+        {#- No matter what, let's output the title of the page or post. -#}
+        {{- title -}}
 
-    {#- Output the closing tag for the heading element, tested above. -#}
-    </{{- 'h2' if teaser else 'h1' -}}>
+      {#- Output the closing tag for the heading element, tested above. -#}
+      </{{- 'h2' if teaser else 'h1' -}}>
+
+      {#- While all pages and posts have titles, and many will have image
+          banners, not all will output meta details; these are only inluced on
+          posts and pages that display posts, such as the blog page that lists
+          posts in reverse chronological order. The post meta details can be
+          set include the container for the hero text.
+      -#}
+
+      {{- postMeta(
+          date=date,
+          excerpt=excerpt,
+          tags=tags,
+          teaser=true,
+          url=url
+      ) -}}
+
+    </div>
   </div>
 {%- endmacro -%}

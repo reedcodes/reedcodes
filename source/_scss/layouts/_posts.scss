@@ -1,4 +1,7 @@
 .posts {
-  --hero-aspectRatio: 21/9;
-  --hero-title-minInlineSize: 100%;
+
+  .hero {
+    --hero-image-aspectRatio: 21/9;
+    --hero-image-flexBasis: 100%;
+  }
 }

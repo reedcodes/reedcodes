@@ -6,12 +6,10 @@ pageClass: pages
 {%- from "hero.njk" import hero with context -%}
 
 <article>
-
   {{- hero(
       banner=banner,
       title=title
   ) -}}
 
   {{ content|safe }}
-
 </article>

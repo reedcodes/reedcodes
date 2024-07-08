@@ -4,7 +4,6 @@ pageClass: blog
 ---
 
 {%- from "hero.njk" import hero with context -%}
-{%- from "post-meta.njk" import postMeta with context -%}
 
 <h1>{{ title }}</h1>
 
@@ -15,15 +14,11 @@ pageClass: blog
     <article>
       {{- hero(
           banner=post.data.banner,
-          teaser=true,
-          title=post.data.title
-      ) -}}
-
-      {{- postMeta(
           date=post.data.date,
           excerpt=post.data.excerpt,
           tags=post.data.tags,
           teaser=true,
+          title=post.data.title,
           url=post.url
       ) -}}
     </article>
