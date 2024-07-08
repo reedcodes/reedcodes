@@ -1,19 +1,15 @@
 @font-face {
   font-family: "Public Sans";
-  src:
-    local( "Public Sans" ),
-    local( "Public-Sans" ),
-    url("/_assets/webfonts/PublicSans-Regular.woff2") format("woff2");
-  font-weight: 100 900;
+  font-weight: 100 1000;
   font-style: normal;
+  src:
+    url("/_assets/webfonts/PublicSans[wght].ttf") format("ttf");
 }
 
 @font-face {
   font-family: "Public Sans";
-  src:
-    local( "Public Sans" ),
-    local( "Public-Sans" ),
-    url("/_assets/webfonts/PublicSans-Italic.woff2") format("woff2");
-  font-weight: 100 900;
+  font-weight: 100 1000;
   font-style: italic;
+  src:
+    url("/_assets/webfonts/PublicSans-Italic[wght].ttf") format("ttf");
 }
