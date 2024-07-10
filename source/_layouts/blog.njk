@@ -5,7 +5,7 @@ pageClass: blog
 
 {%- from "hero.njk" import hero with context -%}
 
-<h1>{{ title }}</h1>
+{{- hero(title=title) -}}
 
 {%- set postList = pagination.items -%}
 

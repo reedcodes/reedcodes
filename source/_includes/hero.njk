@@ -20,7 +20,18 @@
           `h2`. Otherwise, this macro is used on the page or post iteself, and
           it output as an `h1`.
       -#}
-      <{{- 'h2' if teaser else 'h1' -}}>
+      <{{- 'h2' if teaser else 'h1' -}}
+
+        {#- "Read more" links aren't accessible, since it's the same text that
+            can be used in a list of blog posts, all leading to different posts.
+            Adding an id here will let us include an `aria-labelledby` attribute
+            to the "read more" link, providing more accessible link text.
+
+            Since all blog posts have unique titles, we can use that to create
+            an id for the title of the post.
+        #}
+
+        id="{{- title|slugify -}}">
 
         {#- No matter what, let's output the title of the page or post. -#}
         {{- title -}}
@@ -40,6 +51,7 @@
           excerpt=excerpt,
           tags=tags,
           teaser=true,
+          title=title,
           url=url
       ) -}}
 
