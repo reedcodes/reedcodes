@@ -1,4 +1,4 @@
-{%- macro postMeta(date, excerpt, tags, teaser, url) -%}
+{%- macro postMeta(date, excerpt, tags, teaser, title, url) -%}
 
   {#- Dates are included on posts, but not pages. Display the date below the
       header. Even though there will very most likely always be a date, we can
@@ -38,9 +38,12 @@
       we may or may not want it to link anywhere from the page. Let's check if
       it is part of the teaser; if it is, output the link! If not, output no
       element. The teaser url is not used on pages.
+
+      Label the link by the title of the post, to create more accessible link
+      text, and not just "read more".
   -#}
   {%- if teaser and url -%}
-    <a href="{{- url -}}">Read the full post</a>
+    <a href="{{- url -}}" aria-labelledby="{{- title|slugify -}}">Read the full post</a>
   {%- endif -%}
 
 {%- endmacro -%}
