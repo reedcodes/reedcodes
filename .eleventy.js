@@ -6,6 +6,8 @@ const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const eleventyRssPlugin = require("@11ty/eleventy-plugin-rss");
 
 const favicons = require('eleventy-plugin-gen-favicons');
+const markdownIt = require('markdown-it');
+const markdownItAttrs = require('markdown-it-attrs');
 const metagen = require('eleventy-plugin-metagen');
 
 /*
@@ -31,6 +33,17 @@ module.exports = function(eleventyConfig) {
   // Add the metagen plugin for 11ty.
   // https://github.com/tannerdolby/eleventy-plugin-metagen
   eleventyConfig.addPlugin(metagen);
+
+  // Add the MarkdownIt plugin for 11ty.
+  const markdownItOptions = {
+    html: true,
+    breaks: true,
+    linkify: true
+  }
+
+  eleventyConfig.setLibrary('md',
+    markdownIt(markdownItOptions).use(markdownItAttrs)
+  );
 
   // Add the favicon plugin for 11ty.
   // https://github.com/NJAldwin/eleventy-plugin-gen-favicons
