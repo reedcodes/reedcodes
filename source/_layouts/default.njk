@@ -26,13 +26,10 @@
       <nav>
         <a id="me" href="/">Reed Piernock</a>
 
-        {%- set menu = collections.all|eleventyNavigation -%}
-        {%- if menu -%}
+        {%- if navigation.header -%}
           <ul>
-            {%- for item in menu -%}
-              {%- if item.key != 'Home' -%}
-                <li><a href="{{- item.url -}}">{{- item.key -}}</a></li>
-              {%- endif -%}
+            {%- for url, key in navigation.header -%}
+              <li><a href="/{{- url -}}/">{{- key -}}</a></li>
             {%- endfor -%}
           </ul>
         {%- endif -%}
@@ -53,12 +50,20 @@
       <p>© {{ page.date.getFullYear() }} Reed Piernock.</p>
       <p><a href="/feed.xml">Subscribe to the blog feed</a></p>
 
+      {%- if navigation.footer -%}
+        <ul>
+          {%- for url, key in navigation.footer -%}
+            <li><a href="/{{- url -}}/">{{- key -}}</a></li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
       <section aria-labelledby="contact">
         <h2 id="contect">Get in Touch</h2>
 
         <p>Feel free to contact me! We can chat about the current state of the web and front-end development, and I would love to discuss the finer points of horror film and our relationships with it.</p>
 
-        <a href="/contact/">Send a message</a>
+        <a href="/contact/">Contact</a>
       </section>
 
       <nav aria-labelledby="css-joy">
