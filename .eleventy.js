@@ -2,21 +2,24 @@
  * 11ty plugins.
  */
 
-const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
-const eleventyRssPlugin = require("@11ty/eleventy-plugin-rss");
+import eleventyNavigationPlugin from '@11ty/eleventy-navigation';
+import eleventyRssPlugin from "@11ty/eleventy-plugin-rss";
 
-const favicons = require('eleventy-plugin-gen-favicons');
-const markdownIt = require('markdown-it');
-const markdownItAttrs = require('markdown-it-attrs');
-const metagen = require('eleventy-plugin-metagen');
+import favicons from 'eleventy-plugin-gen-favicons';
+import markdownIt from 'markdown-it';
+import markdownItAttrs from 'markdown-it-attrs';
+import metagen from 'eleventy-plugin-metagen';
+
+import collectionPostList from './source/_config/collections/posts.js';
+import collectionTagList from './source/_config/collections/tags.js';
+import filterDate from './source/_config/filters/date-simple.js';
 
 /*
  * 11ty configurations.
- * This section includes setup for collections, filters, and shortcodes, then
- * returns the 11ty settings.
+ * This section includes setup for collections, filters, and shortcodes.
  */
 
-module.exports = function(eleventyConfig) {
+export default async function(eleventyConfig) {
 
   // Add the 11ty nav plugin. This creates an 11ty navigation based on pages
   // in a collection.
@@ -53,11 +56,11 @@ module.exports = function(eleventyConfig) {
 
   // Add collections! This assists in pulling in various collections in the
   // blog, such as posts and tags.
-  eleventyConfig.addCollection( 'postList', require('./source/_config/collections/posts.js'));
-  eleventyConfig.addCollection( 'tagList', require('./source/_config/collections/tags.js') );
+  eleventyConfig.addPlugin(collectionPostList);
+  eleventyConfig.addPlugin(collectionTagList);
 
   // Add date filters to make it a little easier to write dates.
-  eleventyConfig.addFilter('dateSimple', require('./source/_config/filters/date-simple.js'));
+  eleventyConfig.addPlugin(filterDate);
 
   // Watch for changes to assets, such as images or style sheets, and refresh
   // the website.
@@ -68,17 +71,22 @@ module.exports = function(eleventyConfig) {
     './source/_images/': '_assets/images/',
     './source/_webfonts/': '_assets/webfonts/'
   } );
+}
 
-  // 11ty config options.
-  return {
-    htmlTemplateEngine: 'njk',
-    markdownTemplateEngine: 'njk',
-    dir: {
-      input: 'source',
-      data: '_data',
-      includes: '_includes',
-      layouts: '_layouts',
-      output: 'site'
-    }
-  };
+export const config = {
+  templateFormats: ['njk', 'md', 'html'],
+  htmlTemplateEngine: 'njk',
+  markdownTemplateEngine: 'njk',
+
+  // These are the folders that 11ty will use when compiling the built site.
+  // The directories for `input` and `output` are relative to the root of the
+  // project. The directories for `data`, `includes`, and `layouts` are
+  // relative to the `input` directory, i.e. `source`.
+  dir: {
+    input: 'source',
+    data: '_data',
+    includes: '_includes',
+    layouts: '_layouts',
+    output: 'site'
+  }
 }

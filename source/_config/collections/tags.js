@@ -1,9 +1,11 @@
-module.exports = function(collection) {
-  const tagList = new Set();
+export default function(eleventyConfig) {
+  eleventyConfig.addCollection('tagList', (collectionsApi) => {
+    const tagList = new Set();
 
-  collection.getAll().forEach((item) => {
-    (item.data.tags || []).forEach(tag => tagList.add(tag));
+    collectionsApi.getAll().forEach((item) => {
+      (item.data.tags || []).forEach(tag => tagList.add(tag));
+    });
+
+    return([...tagList]);
   });
-
-  return([...tagList]);
 };
