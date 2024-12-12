@@ -3,7 +3,7 @@
  */
 
 import eleventyNavigationPlugin from '@11ty/eleventy-navigation';
-import eleventyRssPlugin from "@11ty/eleventy-plugin-rss";
+import {feedPlugin} from '@11ty/eleventy-plugin-rss';
 
 import favicons from 'eleventy-plugin-gen-favicons';
 import markdownIt from 'markdown-it';
@@ -27,9 +27,19 @@ export default async function(eleventyConfig) {
 
   // Add the 11ty RSS plugin. This creates a feed that can then be available
   // for audience to subscribe to the blog in their favorite reader.
-  eleventyConfig.addPlugin(eleventyRssPlugin, {
-    posthtmlRenderOptions: {
-      quoteStyle: 0
+  eleventyConfig.addPlugin(feedPlugin, {
+    collection: {
+      name: 'posts'
+    },
+    metadata: {
+      language: 'en',
+      title: 'Reed Piernock',
+      subtitle: 'Reed is a front-end developer and pop culture scholar. Their blog covers a variety of topics, from HTML to horror movies.',
+      base: 'https://reedcodes.com/',
+      author: {
+        name: 'Reed Piernock',
+        email: 'hello@reedcodes.com'
+      }
     }
   });
 
