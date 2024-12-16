@@ -25,7 +25,8 @@ body {
 :last-child { margin-bottom: 0; }
 
 :target {
-  scroll-margin-block: 5ex; }
+  scroll-margin-block: 5ex;
+}
 
 :focus,
 :focus-visible {

@@ -1,3 +1,5 @@
-module.exports = function(collection) {
-  return([...collection.getFilteredByGlob( "./source/posts/**/*.md" )].reverse());
+export default function(eleventyConfig) {
+  eleventyConfig.addCollection('postList', (collectionsApi) => {
+    return([...collectionsApi.getFilteredByGlob( "./source/posts/**/*.md" )].reverse());
+  });
 };
