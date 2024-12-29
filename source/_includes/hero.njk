@@ -20,21 +20,24 @@
           `h2`. Otherwise, this macro is used on the page or post iteself, and
           it output as an `h1`.
       -#}
-      <{{- 'h2' if teaser else 'h1' -}}
+      <{{- 'h2' if teaser else 'h1' -}}>
 
-        {#- "Read more" links aren't accessible, since it's the same text that
-            can be used in a list of blog posts, all leading to different posts.
-            Adding an id here will let us include an `aria-labelledby` attribute
-            to the "read more" link, providing more accessible link text.
+        {#- The url is the link to the blog post, but depending on where it is
+            output, we may or may not want it to link anywhere from the page.
+            Let's check if it is part of the teaser; if it is, output the link!
+            If not, output no element. The teaser url is not used on pages.
+        -#}
+        {%- if teaser and url -%}
+          <a href="{{- url -}}">
+        {%- endif -%}
 
-            Since all blog posts have unique titles, we can use that to create
-            an id for the title of the post.
-        #}
+          {#- No matter what, let's output the title of the page or post. -#}
+          {{- title -}}
 
-        id="{{- title|slugify -}}">
-
-        {#- No matter what, let's output the title of the page or post. -#}
-        {{- title -}}
+        {#- Close that link if we've got one! -#}
+        {%- if teaser and url -%}
+          </a>
+        {%- endif -%}
 
       {#- Output the closing tag for the heading element, tested above. -#}
       </{{- 'h2' if teaser else 'h1' -}}>
