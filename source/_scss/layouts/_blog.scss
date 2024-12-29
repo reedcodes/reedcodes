@@ -1,3 +1,7 @@
 .blog,
 .tags {
+  article {
+    padding-block: 1.5em;
+    border-block-end: 0.25rem solid black;
+  }
 }
