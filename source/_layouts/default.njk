@@ -25,13 +25,7 @@
       <nav>
         <a id="me" href="/">Reed Piernock</a>
 
-        {%- if navigation.header -%}
-          <ul>
-            {%- for url, key in navigation.header -%}
-              <li><a href="/{{- url -}}/">{{- key -}}</a></li>
-            {%- endfor -%}
-          </ul>
-        {%- endif -%}
+        {{ collections.pages | eleventyNavigation | eleventyNavigationToHtml | safe }}
       </nav>
 
       {#
@@ -54,21 +48,9 @@
       <p>© {{ page.date.getFullYear() }} Reed Piernock.</p>
       <p><a href="/feed.xml">Subscribe to the blog feed</a></p>
 
-      {%- if navigation.footer -%}
-        <ul>
-          {%- for url, key in navigation.footer -%}
-            <li><a href="/{{- url -}}/">{{- key -}}</a></li>
-          {%- endfor -%}
-        </ul>
-      {%- endif -%}
+      <p>This site is built using tools such as <a href="https://www.11ty.dev/">11ty</a> and <a href="https://sass-lang.com/">Sass</a>. Hosting and domain available through <a href="https://www.dreamhost.com/">DreamHost</a>.</p>
 
-      <section aria-labelledby="contact">
-        <h2 id="contect">Get in Touch</h2>
-
-        <p>Feel free to contact me! We can chat about the current state of the web and front-end development, and I would love to discuss the finer points of horror film and our relationships with it.</p>
-
-        <a href="/contact/">Contact</a>
-      </section>
+      <p>Check out <a href="https://github.com/reedcodes/reedcodes">this site’s repository on Github</a>.</p>
 
       <nav aria-labelledby="css-joy">
         <h2 id="css-joy">CSS Joy Webring</h2>
