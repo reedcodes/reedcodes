@@ -48,14 +48,12 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPlugin(metagen);
 
   // Add the MarkdownIt plugin for 11ty.
-  const markdownItOptions = {
-    html: true,
-    breaks: true,
-    linkify: true
-  }
-
   eleventyConfig.setLibrary('md',
-    markdownIt(markdownItOptions).use(markdownItAttrs)
+    markdownIt({
+      html: true,
+      breaks: true,
+      linkify: true
+    }).use(markdownItAttrs)
   );
 
   // Add the favicon plugin for 11ty.
