@@ -30,6 +30,7 @@
     "sass": "^1.83.0"
   },
   "main": "eleventy.config.js",
+  "type": "module",
   "scripts": {
     "build:css": "nps css.build",
     "watch:css": "nps css.watch",
