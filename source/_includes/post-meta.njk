@@ -34,16 +34,4 @@
     <p>{{- excerpt -}}</p>
   {%- endif -%}
 
-  {#- The url is the link to the blog post, but depending on where it is output,
-      we may or may not want it to link anywhere from the page. Let's check if
-      it is part of the teaser; if it is, output the link! If not, output no
-      element. The teaser url is not used on pages.
-
-      Label the link by the title of the post, to create more accessible link
-      text, and not just "read more".
-  -#}
-  {%- if teaser and url -%}
-    <a href="{{- url -}}" aria-labelledby="{{- title|slugify -}}">Read the full post</a>
-  {%- endif -%}
-
 {%- endmacro -%}
