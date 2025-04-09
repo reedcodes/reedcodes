@@ -9,8 +9,7 @@
       title = title + " [ReedCodes.com]",
       url = site.url + page.url,
       generator = "eleventy",
-      comments = false,
-      css = ["/_assets/css/reedcodes.css"]
+      comments = false`
   -%}
 
   {% favicons './source/_images/templates/favicon.png' %}
@@ -35,10 +34,13 @@
     </div>
   </header>
 
-  {%- include 'construction.njk' -%}
+  {# {%- include 'construction.njk' -%} #}
 
   <main id="main">
     <div class="container main">
+      <p>Welcome! <b>9 April 2025 is <a href="https://css-naked-day.org/">CSS Naked Day</a>!</b> The stylesheet for this website has been stripped to show off its HTML in all its unstyled glory, including semantic markup and care for accessibility. More information is available on the <a href="https://css-naked-day.org/">CSS Naked Day</a> website.</p>
+      <hr>
+
       {{ content|safe }}
     </div>
   </main>
