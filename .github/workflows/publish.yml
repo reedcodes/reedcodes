@@ -43,8 +43,8 @@ jobs:
       - name: Deploy the site to Dreamhost
         uses: SamKirkland/web-deploy@v1
         with:
-          target-server: reedcodes.com
-          remote-user: reedcodes
+          target-server: ${{ secrets.HOST }}
+          remote-user: ${{ secrets.USER }}
           private-ssh-key: ${{ secrets.SSH_KEY }}
           source-path: ./
           destination-path: /home/reedcodes/reedcodes.com/
