@@ -1,0 +1,50 @@
+name: Publish Website
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - 'main'
+
+jobs:
+  publish:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out the main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      - name: Install and build the site
+        run: |
+          npm install
+          npm run build
+
+      - name: Deploy the site to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          publish_dir: site
+          publish_branch: production
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check out the production branch
+        uses: actions/checkout@v4
+        with:
+          ref: production
+
+      - name: Deploy the site to Dreamhost
+        uses: SamKirkland/web-deploy@v1
+        with:
+          target-server: reedcodes.com
+          remote-user: reedcodes
+          private-ssh-key: ${{ secrets.SSH_KEY }}
+          source-path: ./
+          destination-path: /home/reedcodes/reedcodes.com/
