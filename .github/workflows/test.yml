@@ -1,0 +1,27 @@
+name: Test the website build
+on:
+  pull_request:
+    types:
+      - ready_for_review
+      - review_requested
+    branches:
+      - 'main'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out the main branch
+        uses: actions/checkout@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      - name: Install and build the site
+        run: |
+          npm install
+          npm run build
