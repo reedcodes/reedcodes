@@ -44,7 +44,8 @@ jobs:
         uses: SamKirkland/web-deploy@v1
         with:
           target-server: ${{ secrets.HOST }}
+          destination-path: ${{ secrets.DESTINATION }}
           remote-user: ${{ secrets.USER }}
           private-ssh-key: ${{ secrets.SSH_KEY }}
           source-path: ./
-          destination-path: /home/reedcodes/reedcodes.com/
+          rsync-options: --archive --verbose --compress --human-readable --progress --delete-after
