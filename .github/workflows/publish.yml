@@ -47,5 +47,5 @@ jobs:
           destination-path: ${{ secrets.DESTINATION }}
           remote-user: ${{ secrets.USER }}
           private-ssh-key: ${{ secrets.SSH_KEY }}
-          source-path: ./
+          source-path: ${{ secrets.SOURCE }}
           rsync-options: --archive --verbose --compress --human-readable --progress --delete-after
