@@ -13,8 +13,10 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Check out the main branch
+      - name: Check out the working branch
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Setup node
         uses: actions/setup-node@v4
