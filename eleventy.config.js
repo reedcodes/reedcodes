@@ -3,7 +3,7 @@
  */
 
 import eleventyNavigationPlugin from '@11ty/eleventy-navigation';
-import {feedPlugin} from '@11ty/eleventy-plugin-rss';
+import { feedPlugin } from '@11ty/eleventy-plugin-rss';
 
 import favicons from 'eleventy-plugin-gen-favicons';
 import markdownIt from 'markdown-it';
@@ -19,8 +19,7 @@ import filterDate from './source/_config/filters/date-simple.js';
  * This section includes setup for collections, filters, and shortcodes.
  */
 
-export default async function(eleventyConfig) {
-
+export default async function (eleventyConfig) {
   // Add the 11ty nav plugin. This creates an 11ty navigation based on pages
   // in a collection.
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -29,18 +28,19 @@ export default async function(eleventyConfig) {
   // for audience to subscribe to the blog in their favorite reader.
   eleventyConfig.addPlugin(feedPlugin, {
     collection: {
-      name: 'posts'
+      name: 'posts',
     },
     metadata: {
       language: 'en',
       title: 'Reed Piernock',
-      subtitle: 'Reed is a front-end developer and pop culture scholar. Their blog covers a variety of topics, from HTML to horror movies.',
+      subtitle:
+        'Reed is a front-end developer and pop culture scholar. Their blog covers a variety of topics, from HTML to horror movies.',
       base: 'https://reedcodes.com/',
       author: {
         name: 'Reed Piernock',
-        email: 'hello@reedcodes.com'
-      }
-    }
+        email: 'hello@reedcodes.com',
+      },
+    },
   });
 
   // Add the metagen plugin for 11ty.
@@ -48,18 +48,19 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPlugin(metagen);
 
   // Add the MarkdownIt plugin for 11ty.
-  eleventyConfig.setLibrary('md',
+  eleventyConfig.setLibrary(
+    'md',
     markdownIt({
       html: true,
       breaks: true,
-      linkify: true
+      linkify: true,
     }).use(markdownItAttrs)
   );
 
   // Add the favicon plugin for 11ty.
   // https://github.com/NJAldwin/eleventy-plugin-gen-favicons
   eleventyConfig.addPlugin(favicons, {
-    'outputDir': './site'
+    outputDir: './site',
   });
 
   // Add collections! This assists in pulling in various collections in the
@@ -75,10 +76,12 @@ export default async function(eleventyConfig) {
   eleventyConfig.addWatchTarget('./source/_scss/**/*.scss');
 
   // Send any static assets in the source directory to the built site.
-  eleventyConfig.addPassthroughCopy( {
+  eleventyConfig.addPassthroughCopy({
     './source/_images/': '_assets/images/',
-    './source/_webfonts/': '_assets/webfonts/'
-  } );
+    './source/_webfonts/': '_assets/webfonts/',
+    './source/_deploy/*test*.*': '_deploy/test/',
+    './source/_deploy/*production*.*': '_deploy/production/',
+  });
 }
 
 export const config = {
@@ -95,6 +98,6 @@ export const config = {
     data: '_data',
     includes: '_includes',
     layouts: '_layouts',
-    output: 'site'
-  }
-}
+    output: 'site',
+  },
+};
