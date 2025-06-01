@@ -33,17 +33,3 @@ jobs:
           publish_dir: site
           publish_branch: test
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Check out the test branch
-        uses: actions/checkout@v4
-        with:
-          ref: test
-
-      - name: Test deploying the site to Dreamhost
-        uses: SamKirkland/web-deploy@v1
-        with:
-          target-server: ${{ secrets.HOST }}
-          destination-path: ${{ secrets.DESTINATION }}
-          remote-user: ${{ secrets.USER }}
-          private-ssh-key: ${{ secrets.SSH_KEY }}
-          rsync-options: --dry-run
