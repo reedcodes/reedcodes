@@ -34,17 +34,3 @@ jobs:
           publish_dir: site
           publish_branch: production
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Check out the production branch
-        uses: actions/checkout@v4
-        with:
-          ref: production
-
-      - name: Deploy the site to Dreamhost
-        uses: SamKirkland/web-deploy@v1
-        with:
-          target-server: ${{ secrets.HOST }}
-          remote-user: ${{ secrets.USER }}
-          private-ssh-key: ${{ secrets.SSH_KEY }}
-          source-path: ./
-          destination-path: /home/reedcodes/reedcodes.com/

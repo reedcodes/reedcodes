@@ -2,19 +2,20 @@ name: Test the website build
 on:
   pull_request:
     types:
-      - ready_for_review
-      - review_requested
+      - synchronize
     branches:
       - 'main'
 
 jobs:
-  publish:
+  test:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - name: Check out the main branch
+      - name: Check out the working branch
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Setup node
         uses: actions/setup-node@v4
@@ -25,3 +26,10 @@ jobs:
         run: |
           npm install
           npm run build
+
+      - name: Deploy the site to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          publish_dir: site
+          publish_branch: test
+          github_token: ${{ secrets.GITHUB_TOKEN }}
