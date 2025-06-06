@@ -1,7 +1,16 @@
 .construction {
   padding-block: 1rem;
   margin-block-end: 1rem;
-  background-color: #FEFCDF;
+  background-color: var(--color-accent);
+	color: var(--color-background);
+	
+	a {
+		color: var(--color-tertiary);
+		
+		&:focus, &:hover {
+			color: var(--color-secondary);
+		}
+	}
 
   .container {
     display: flex;
