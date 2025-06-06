@@ -9,6 +9,8 @@ eleventyNavigation:
 
 # Hello! My name is Reed.
 
+!["Reed Piernock"](/_assets/images/templates/reedcodes.png)
+
 I am a front-end web developer in Philadelphia PA, specializing in accessible websites using instrinsic design and modern CSS techniques. I also serve as the Secretary on the [Board of Directors at WPCampus](https://www.wpcampus.org/governance/board/).
 
 I hold a master's degree in [Communication, Culture, and Technology](https://cct.georgetown.edu/) from the Graduate School of Arts and Sciences at Georgetown University, focusing on popular media and horror studies. Within my graduate program, I've branched out from web development and explored other passions, critically examining horror media with regard to abuse, oppression, identity, and underrepresentation.
