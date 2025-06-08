@@ -1,0 +1,40 @@
+.header {
+	display: flex;
+	gap: 2rem;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	img {
+		aspect-ratio: 1;
+		inline-size: 5rem;
+		border-radius: 50%;
+		border: 0.15em solid var(--color-primary);
+	}
+}
+
+.nav {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.nav-main,
+.nav-utility {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+
+	li {
+		font-weight: bold;
+		font-size: 1rem;
+		line-height: 1;
+	}
+
+	a {
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+}
