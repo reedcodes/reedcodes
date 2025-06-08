@@ -22,24 +22,20 @@
 
   <header id="header">
     <div class="container header">
-      <nav>
-        <ul class="nav-main" role="list">
+      <a class="logo" href="/"><img alt="ReedCodes.com homepage" src="/_assets/images/templates/reedcodes-square.png"></a>
+
+      <nav class="nav">
+        <ul role="list" class="nav-main">
           {%- for navItem in collections.pages | eleventyNavigation %}
             <li{% if navItem.url == page.url %} aria-current="page"{% endif %}>
               <a href="{{ navItem.url }}">{{ navItem.title }}</a>
             </li>
           {%- endfor %}
         </ul>
+        <ul role="list" class="nav-utility">
+          <li><a class="button outline blue" href="/contact/">Contact</a></li>
+        </ul>
       </nav>
-
-      <ul class="nav-utility" role="list">
-        <li><a class="button outline blue" href="/contact">Contact</a></li>
-      </ul>
-
-      {#
-      <search>
-      </search>
-      #}
     </div>
   </header>
 
