@@ -23,8 +23,7 @@
   <header id="header">
     <div class="container header">
       <nav>
-        {% set mainNav = collections.pages | eleventyNavigation %}
-        <ul>
+        <ul class="nav-main" role="list">
           {%- for navItem in collections.pages | eleventyNavigation %}
             <li{% if navItem.url == page.url %} aria-current="page"{% endif %}>
               <a href="{{ navItem.url }}">{{ navItem.title }}</a>
@@ -33,7 +32,7 @@
         </ul>
       </nav>
 
-      <ul>
+      <ul class="nav-utility" role="list">
         <li><a class="button outline blue" href="/contact">Contact</a></li>
       </ul>
 
