@@ -23,10 +23,19 @@
   <header id="header">
     <div class="container header">
       <nav>
-        <a class="link-home" href="/">Reed Piernock</a>
-
-        {{ collections.pages | eleventyNavigation | eleventyNavigationToHtml | safe }}
+        {% set mainNav = collections.pages | eleventyNavigation %}
+        <ul>
+          {%- for navItem in collections.pages | eleventyNavigation %}
+            <li{% if navItem.url == page.url %} aria-current="page"{% endif %}>
+              <a href="{{ navItem.url }}">{{ navItem.title }}</a>
+            </li>
+          {%- endfor %}
+        </ul>
       </nav>
+
+      <ul>
+        <li><a class="button outline blue" href="/contact">Contact</a></li>
+      </ul>
 
       {#
       <search>
