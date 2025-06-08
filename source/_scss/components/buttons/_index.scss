@@ -7,6 +7,11 @@
 	border-radius: 0.5em;
 	background-color: var(--button-backgroundColor);
 	color: var(--button-color);
+	font-weight: bold;
+	font-size: 1rem;
+	line-height: 1;
+	text-decoration: none;
+	text-transform: uppercase;
 	
 	&:hover, &:focus {
 		box-shadow:
