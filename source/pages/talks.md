@@ -2,12 +2,18 @@
 title: Talks
 eleventyNavigation:
   key: Talks
-  order: 3
+  order: 4
 ---
 
 This is a repository for lightning talks, presentations, and papers given by Reed, individually and collaboratively. Co-presenters are credited with each presentation.
 
 ## Academic Conference Presentations
+
+**Popular Culture Association, Annual Conference 2024**, 16-19 April 2025. New Orleans, LA  
+“‘It was the Mirror!’ Untrusted Experience in Mike Flanagan’s _Oculus_”
+
+**Mid-Atlantic Popular and American Culture Association Annual Conference**, 7-9 November 2024  
+“‘Don’t You Know the Rules?’: A Social Network Analysis of the 100 Horror Movies in 92 Days Challenge”
 
 **Popular Culture Association, Annual Conference 2024**, 27-30 March 2024. Chicago, IL  
 “‘&%#@ Christmas’: Surplus Repression and Capitalistic Ideology in _A Christmas Horror Story_”
@@ -25,6 +31,12 @@ This is a repository for lightning talks, presentations, and papers given by Ree
 “‘Everything You Remember Never Really Happened’: Emotional Abuse and Untrusted Experience in Alex Proyas’ _Dark City_”
 
 ## Professional Conference Presentations
+
+**West Orlando WordPress Meetup**, 16 January 2025. Virtual.  
+“Writing Expressive and Effective ALT Text”
+
+**Equalize Digital / WordPress Accessibility Meetup** 27 November 2023. Virtual.  
+“Component Pattern Libraries for an Accessible WordPress Experience”
 
 **HighEdWeb 2023**, 8-11 October 2023. Buffalo, NY. _Cancelled_.  
 “This Goes Up to 11(ty): Creating a Flexible, Fast Static Site with Eleventy”

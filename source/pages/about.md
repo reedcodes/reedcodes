@@ -1,12 +1,9 @@
 ---
-title: Homepage
-layout: default
-permalink: "/"
+title: More about Reed
+eleventyNavigation:
+  key: About
+  order: 1
 ---
-
-# Hello! My name is Reed.
-
-!["Reed Piernock"](/_assets/images/templates/reedcodes.png)
 
 I am a front-end web developer in Philadelphia PA, specializing in accessible websites using instrinsic design and modern CSS techniques. I’m currently the Director of Web Strategy and Development at Rowan University, and I also serve as the Secretary on the [Board of Directors at WPCampus](https://www.wpcampus.org/governance/board/).
 
