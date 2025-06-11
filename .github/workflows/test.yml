@@ -2,6 +2,7 @@ name: Test the website build
 on:
   pull_request:
     types:
+      - opened
       - synchronize
     branches:
       - 'main'
