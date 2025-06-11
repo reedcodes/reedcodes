@@ -78,9 +78,7 @@ export default async function (eleventyConfig) {
   // Send any static assets in the source directory to the built site.
   eleventyConfig.addPassthroughCopy({
     './source/_images/': '_assets/images/',
-    './source/_webfonts/': '_assets/webfonts/',
-    './source/_deploy/*test*.*': '_deploy/test/',
-    './source/_deploy/*production*.*': '_deploy/production/',
+    './source/_webfonts/': '_assets/webfonts/'
   });
 }
 
