@@ -1,8 +1,10 @@
 ---
 title: Contact
+override:tags: [utilities]
 eleventyNavigation:
   key: Contact
   order: 1
+  button: true
 ---
 
 I'd love to chat with you about CSS, web accessibility, road trips, pop culture, horror films, fat studies, and more.
