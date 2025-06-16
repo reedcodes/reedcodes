@@ -1,7 +1,7 @@
 ---
 title: Blog
-permalink: "/blog{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber + 1 }}{% endif %}/index.html"
 layout: blog
+permalink: "/blog{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber + 1 }}{% endif %}/index.html"
 eleventyNavigation:
   key: Blog
   order: 2
