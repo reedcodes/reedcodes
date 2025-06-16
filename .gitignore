@@ -6,5 +6,8 @@
 .env
 node_modules
 
+# Deployment files.
+.publish
+
 # Site build.
 site
