@@ -1,5 +1,8 @@
 ---
 title: Contact
+eleventyNavigation:
+  key: Contact
+  order: 1
 ---
 
 I'd love to chat with you about CSS, web accessibility, road trips, pop culture, horror films, fat studies, and more.
