@@ -1,0 +1,18 @@
+{%- macro regionHead() -%}
+
+{%- metagen
+		name = site.name,
+		desc = site.description,
+		site_name = site.website,
+		title = title + " [ReedCodes.com]",
+		url = site.url + page.url,
+		generator = "eleventy",
+		comments = false`,
+		css = ["/_assets/css/reedcodes.css"]
+-%}
+
+{% favicons './source/_images/templates/favicon.png' %}
+
+<link rel="alternate" type="application/rss+xml" title="RSS feed for ReedCodes website" href="feed.xml" />
+
+{%- endmacro -%}

@@ -1,0 +1,30 @@
+{%- from "head.njk" import regionHead with context -%}
+{%- from "header.njk" import regionHeader with context -%}
+{%- from "footer.njk" import regionFooter with context -%}
+
+<!doctype html>
+<html>
+
+<head>
+  {{- regionHead() -}}
+</head>
+
+<body class="site {{ pageClass -}}">
+
+  <header id="header">
+    {{- regionHeader() -}}
+  </header>
+
+  {%- include 'construction.njk' -%}
+
+  <main id="main">
+    {{- content|safe -}}
+  </main>
+
+  <footer id="footer">
+    {{- regionFooter() -}}
+  </footer>
+
+  </div>
+</body>
+</html>
