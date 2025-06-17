@@ -1,0 +1,11 @@
+{%- macro regionNav(nav, class) -%}
+
+<ul role="list" class="nav-{{- class -}}">
+	{%- for item in nav | eleventyNavigation %}
+		<li class="nav-item"{% if item.url == page.url %} aria-current="page"{% endif -%}>
+			<a class="nav-link {{ 'button' if item.button == true -}}" href="{{ item.url }}">{{ item.title }}</a>
+		</li>
+	{%- endfor %}
+</ul>
+
+{%- endmacro -%}
