@@ -2,20 +2,20 @@
 
 {%- macro regionHeader() -%}
 
-	<div class="container header">
-		<a class="logo" href="/"><img alt="ReedCodes.com homepage" src="/_assets/images/templates/reedcodes-square.png"></a>
+<div class="container header">
+	<a class="logo" href="/"><img alt="ReedCodes.com homepage" src="/_assets/images/templates/reedcodes-square.png"></a>
 
-		<nav class="nav">
-			{{- regionNav(
-					nav=collections.pages,
-					class='main'
-			) -}}
+	<nav class="nav">
+		{{- regionNav(
+				nav=collections.pages,
+				class='main'
+		) -}}
 
-			{{- regionNav(
-					nav=collections.utilities,
-					class='utility'
-			) -}}
-		</nav>
-	</div>
+		{{- regionNav(
+				nav=collections.utilities,
+				class='utility'
+		) -}}
+	</nav>
+</div>
 
 {%- endmacro -%}
