@@ -5,15 +5,15 @@ pageClass: post
 
 {%- from 'hero.njk' import hero with context -%}
 
-<div class="container">
-  <article>
-    {{- hero(
-        banner=banner,
-        date=date,
-        tags=tags,
-        title=title
-    ) -}}
+<article>
+  {{- hero(
+      banner=banner,
+      date=date,
+      tags=tags,
+      title=title
+  ) -}}
 
+  <div class="content">
     {{- content | safe -}}
-  </article>
-</div>
+  </div>
+</article>

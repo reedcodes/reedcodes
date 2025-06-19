@@ -4,5 +4,7 @@
 	This section will be updated later to consolidate, but I'm keeping it separate here until all the Sass refactoring is done.
 */
 
+@use "includes/hero";
+
 @use "layouts/base";
 @use "layouts/post";
