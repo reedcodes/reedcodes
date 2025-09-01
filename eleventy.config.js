@@ -14,6 +14,8 @@ import collectionPostList from './source/_config/collections/posts.js';
 import collectionTagList from './source/_config/collections/tags.js';
 import filterDate from './source/_config/filters/date-simple.js';
 
+import shortcodeYear from './source/_config/shortcodes/date-year.js';
+
 /*
  * 11ty configurations.
  * This section includes setup for collections, filters, and shortcodes.
@@ -70,6 +72,9 @@ export default async function (eleventyConfig) {
 
   // Add date filters to make it a little easier to write dates.
   eleventyConfig.addPlugin(filterDate);
+
+  // Add a date shortcode for the current year.
+  eleventyConfig.addPlugin(shortcodeYear);
 
   // Watch for changes to assets, such as images or style sheets, and refresh
   // the website.

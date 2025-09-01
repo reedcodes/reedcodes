@@ -6,5 +6,12 @@
 .env
 node_modules
 
+# Deployment files.
+.publish
+
+# Colors are saved in source/_data and the generated Sass files
+# do not need to be committed.
+source/_scss/**/*color*.*
+
 # Site build.
 site

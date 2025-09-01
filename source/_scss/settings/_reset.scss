@@ -1,18 +1,17 @@
 /*
- * inspired by several resets, e.g.
- * https://piccalil.li/blog/a-modern-css-reset/
- * https://meyerweb.com/eric/tools/css/reset/
+ * My base-level CSS reset, inspired by several resets, but mostly
+ * https://piccalil.li/blog/a-more-modern-css-reset/
  */
-
-html {
-  text-size-adjust: none;
-}
 
 *, 
 *::before,
 *::after {
   box-sizing: border-box;
-}  
+}
+
+html {
+  text-size-adjust: none;
+}
 
 body {
   min-block-size: 100vh;
@@ -20,9 +19,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
-:first-child { margin-top: 0; }
-:last-child { margin-bottom: 0; }
 
 :target {
   scroll-margin-block: 5ex;
@@ -41,6 +37,20 @@ h5,
 h6 {
   line-height: 1.15;
   text-wrap: balance;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+table {
+  margin-block: 0;
 }
 
 a {
