@@ -2,6 +2,9 @@
 title: Homepage
 layout: default
 permalink: "/"
+eleventyNavigation:
+  key: Home
+  order: 0
 ---
 
 !["Reed Piernock"](/_assets/images/templates/reedcodes.png)

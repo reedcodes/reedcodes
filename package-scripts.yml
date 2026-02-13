@@ -1,4 +1,7 @@
 scripts:
+  color:
+    build: "npx a11y-color-tokens --outputDirPath='./source/_scss/settings' --outputFilename='_color.scss' --colorTokensPath='./source/_data/colors.cjs' --sassOutputName='colors' --compatibilityDocsTitle='Color' --customPropertiesFormat='root'"
+    watch: "onchange './source/_data/colors.cjs' -- nps color.build"
   css:
     build: "sass --style=compressed --no-source-map ./source/_scss:./site/_assets/css"
     watch: "sass --watch ./source/_scss:./site/_assets/css"
