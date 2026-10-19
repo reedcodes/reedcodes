@@ -2,7 +2,7 @@
 
 <img src="https://github.com/reedcodes/reedcodes/assets/18013388/c07f62f8-0fa6-482b-8e27-ca0e4b750e8b" width="150">
 
-**Nearly all of the repos here are archived, as I am moving my active repos to Codeberg.**  
+**Nearly all of my personal repos here are archived, as I am moving my active repos to Codeberg.**  
 [codeberg.org/ReedCodes](https://codeberg.org/ReedCodes)
 
 ---
