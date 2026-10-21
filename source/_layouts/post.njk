@@ -1,0 +1,19 @@
+---
+layout: base
+pageClass: post
+---
+
+{%- from 'hero.njk' import hero with context -%}
+
+<article>
+  {{- hero(
+      banner=banner,
+      date=date,
+      tags=tags,
+      title=title
+  ) -}}
+
+  <div class="content">
+    {{- content | safe -}}
+  </div>
+</article>
